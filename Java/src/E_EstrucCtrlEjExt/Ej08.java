@@ -5,26 +5,31 @@ import java.util.Scanner;
 public class Ej08 {
 
     public static void main(String[] args) {
-        /*Escriba un programa que lea números enteros. Si el número es múltiplo
-de cinco debe detener la lectura y mostrar la cantidad de números
-leídos, la cantidad de números pares y la cantidad de números impares.
-Al igual que en el ejercicio anterior los números negativos no deben
-sumarse. Nota: recordar el uso de la sentencia break.
-*/
         Scanner leer = new Scanner(System.in);
-        int cantnum = 0; cantpar = 0;cantimpar = 0;
+        int num = 0, n, nPar = 0, nImpar = 0, cant = 0;
+
+
+        /*System.out.println("Ingrese la cantidad de numeros: ");
+        n = leer.nextInt();*/
+
         do {
-        System.out.println("Ingrese números enteros");
-        int num = leer.nextInt();
-            if (num % 5 = 0){
-                break;
+            System.out.println("Escriba un numero: ");
+            num = leer.nextInt();
+
+            if (num < 0) {
+                continue;
+            } else if (num % 2 == 0) {
+                nPar += 1;
+            } else {
+                nImpar += 1;
             }
-            if (num > 0){
-            cantnum++;
-        }
-        
-        
-        }
+            cant++;
+
+        } while (num % 5 != 0);
+
+        System.out.println("La cantidad de numeros pares leidos es: " + nPar);
+        System.out.println("La cantidad de numeros impares leidos es: " + nImpar);
+        System.out.println("La cantidad de numeros totales leidos es: " + cant);
+
     }
-    
 }
